@@ -10,7 +10,6 @@ class Program
         String letter;
         if (grade >= 90)
         {
-            Console.WriteLine("Your grade is an A!");
             letter = "A";
         }
         else if (grade >= 80)

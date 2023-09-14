@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using System.Xml.XPath;
-using System.Collections.Generic
+using System.Collections.Generic;
 
 class Program
 {
@@ -17,13 +17,19 @@ class Program
             numbers.Add(int.Parse(result));
         }
         int sum = 0;
+        int largest = 0;
         foreach (int number in numbers)
         {
             sum += number;
+            if (largest < number)
+            {
+                largest = number;
+            }
         }
         Console.WriteLine($"The sum is: {sum}");
-        int listLength = numbers.Count;
-        int average = sum / listLength;
+        float listLength = numbers.Count;
+        double average = sum / (listLength - 1);
         Console.WriteLine($"The average is: {average}");
+        Console.WriteLine($"The largest number is: {largest}");
     }
 }

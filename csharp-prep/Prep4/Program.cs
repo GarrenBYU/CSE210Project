@@ -24,6 +24,6 @@ class Program
         Console.WriteLine($"The sum is: {sum}");
         int listLength = numbers.Count;
         int average = sum / listLength;
-        Console.WriteLine($"The average is: {average}")
+        Console.WriteLine($"The average is: {average}");
     }
 }

@@ -27,7 +27,7 @@ class Program
             }
         }
         Console.WriteLine($"The sum is: {sum}");
-        float listLength = numbers.Count;
+        double listLength = numbers.Count;
         double average = sum / (listLength - 1);
         Console.WriteLine($"The average is: {average}");
         Console.WriteLine($"The largest number is: {largest}");

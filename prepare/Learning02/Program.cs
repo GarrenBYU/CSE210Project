@@ -18,12 +18,11 @@ class Program
         job2.__company = "Apple";
         job2.__startYear = 2023;
         job2.__endYear = 2025;
-        Console.WriteLine(job1.Display());
-        Console.WriteLine(job2.Display());
 
         Resume myResume = new Resume();
         myResume.__jobs.Add(job1);
         myResume.__jobs.Add(job2);
-        Console.WriteLine(myResume.__jobs[0].__jobTitle);
+        myResume.__name = "Garren M.";
+        myResume.DisplayResume();
     }
 }

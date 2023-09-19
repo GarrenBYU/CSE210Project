@@ -5,8 +5,8 @@ public class Job
     public int __startYear;
     public int __endYear;
     
-    public string Display()
+    public void Display()
     {
-        return $"{__jobTitle} ({__company}) {__startYear}-{__endYear}";
+        Console.WriteLine($"{__jobTitle} ({__company}) {__startYear}-{__endYear}");
     }
 }

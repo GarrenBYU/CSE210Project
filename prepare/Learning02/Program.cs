@@ -18,7 +18,7 @@ class Program
         job2.__company = "Apple";
         job2.__startYear = 2023;
         job2.__endYear = 2025;
-        Console.WriteLine(job1.__company);
-        Console.WriteLine(job2.__company);
+        Console.WriteLine(job1.Display());
+        Console.WriteLine(job2.Display());
     }
 }

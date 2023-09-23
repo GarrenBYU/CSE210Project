@@ -3,7 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Prompt
 {
-        public List<string> _prompts;
+    public List<string> _prompts;
     public string GetRandomPrompt()
     {
         Random randomGenerator = new Random();

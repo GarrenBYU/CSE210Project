@@ -2,24 +2,25 @@ using System;
 using System.IO;
 public class Journal
 {
-    public List<Entry> _entries;
-    public void AddEntry(Entry entry)
+    public List<String> _entries = new List<String>();
+    public void AddEntry(String entry)
     {
         
         this._entries.Add(entry);
+        this._entries.Add(" ");
     }
     public void DisplayAll(){
-        foreach(Entry entry in this._entries){
-            Console.WriteLine(entry.Display());
+        foreach(string entry in this._entries){
+            Console.WriteLine(entry);
         }
     }
      public void SaveToFile(String file){
         string fileName = file;
         using (StreamWriter outputFile = new StreamWriter(fileName)){
 
-            foreach (string entry in this._entries)
+            foreach(string entry in this._entries)
             {
-                Console.WriteLine(entry);
+                outputFile.WriteLine(entry);
             }
         }
      }
@@ -27,9 +28,11 @@ public class Journal
         string filename = file;
         string[] lines = System.IO.File.ReadAllLines(filename);
 
-        foreach (string line in lines)
+        for (int i = 0; i < lines.Length; i++)
         {
-            string[] parts = line.Split(",");
+            //string[] parts = line.Split(",");
+            this._entries.Add(lines[i]);
         }
+        //this._entries.Add('\n');
     } 
 }

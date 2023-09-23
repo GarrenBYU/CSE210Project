@@ -10,6 +10,7 @@ class Program
     {
         Journal newJournal = new Journal();
         Entry newEntry = new Entry();
+        // newJournal._entries;
 
         Console.WriteLine("Welcome to the Journal Program!");
         int choice = 6;
@@ -32,7 +33,7 @@ class Program
                 Console.Write($"{newEntry._question} \n >");
                 newEntry._answer = Console.ReadLine();
                 //string entry = $"Date: {newEntry._date} - Prompt: {newEntry._question} \n{newEntry._answer}";
-                newJournal.AddEntry(newEntry.Display());
+                newJournal.AddEntry($"Date: {newEntry._date} - Prompt: {newEntry._question} \n{newEntry._answer}");
             }
             else if(choice == 2){
                 newJournal.DisplayAll();

@@ -1,5 +1,3 @@
-using System;
-
 public class Journal
 {
     public void AddEntry( String Entry)
@@ -13,6 +11,6 @@ public class Journal
 
     }
     public String LoadFromFile(String file){
-        
+
     } 
 }

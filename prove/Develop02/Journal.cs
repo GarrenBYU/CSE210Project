@@ -1,25 +1,26 @@
-using System.IO;
 using System;
+using System.IO;
 public class Journal
 {
     public List<Entry> _entries;
-    public void AddEntry( String entry)
+    public void AddEntry(Entry entry)
     {
-        string fileName = "Temporary.txt";
-        using (StreamWriter outputFile = new StreamWriter(fileName)){
-            outputFile.WriteLine(entry);
+        
+        this._entries.Add(entry);
+    }
+    public void DisplayAll(){
+        foreach(Entry entry in this._entries){
+            Console.WriteLine(entry.Display());
         }
     }
-    // public void DisplayAll(){
-
-    // }
      public void SaveToFile(String file){
         string fileName = file;
-        string[] lines = System.IO.File.ReadAllLines(fileName);
+        using (StreamWriter outputFile = new StreamWriter(fileName)){
 
-        foreach (string line in lines)
-        {
-            Console.WriteLine(line);
+            foreach (string entry in this._entries)
+            {
+                Console.WriteLine(entry);
+            }
         }
      }
     public void LoadFromFile(String file){
@@ -28,11 +29,7 @@ public class Journal
 
         foreach (string line in lines)
         {
-            string[] parts = line.Split("\n\n");
-            string ogFileName = "Temporary.txt";
-            using (StreamWriter outputFile = new StreamWriter(ogFileName)){
-                outputFile.WriteLine(parts);
-            }
+            string[] parts = line.Split(",");
         }
     } 
 }

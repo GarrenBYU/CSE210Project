@@ -6,12 +6,8 @@ public class Entry
     public string _answer;
     public void Display()
     {
-        string fileName = "Temporary.txt";
-        string[] lines = System.IO.File.ReadAllLines(fileName);
-
-        foreach (string line in lines)
         {
-            Console.WriteLine(line);
+            Console.WriteLine($"Date: {this._date} - Prompt: {this._question} \n{this._answer}");
         }
     }
 }

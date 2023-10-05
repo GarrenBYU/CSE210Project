@@ -32,7 +32,7 @@ Part3
 """);
             Console.Write("Please select one of the following choices: \n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quit \nWhat would you like to do? ");
             choice = (MenuItem) int.Parse(Console.ReadLine());
-            
+            var fileName = "";
             switch (choice)
             {
                 case MenuItem.Write:
@@ -43,12 +43,12 @@ Part3
                     break;
                 case MenuItem.Load:
                     Console.Write("What is the file name? ");
-                    var fileName = Console.ReadLine();
+                    fileName = Console.ReadLine();
                     newJournal.LoadFromFile(fileName);
                     break;
                 case MenuItem.Save:
                     Console.Write("What is the file name? ");
-                    var fileName = Console.ReadLine();
+                    fileName = Console.ReadLine();
                     newJournal.SaveToFile(fileName);
                     break;
                 case MenuItem.Quit:
